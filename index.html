@@ -27,7 +27,8 @@ function write(){
    
 }
 function success(pos){
-  output.innerText = pos.coords.longitude + '      ' + pos.coords.latitude;
+  var coor = pos.coords.longitude + "      " + pos.coords.latitude;
+  output.innerText = coor;
 }
 
 
