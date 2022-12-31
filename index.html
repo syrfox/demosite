@@ -9,12 +9,16 @@
 let gps,timer,output = document.querySelector('p');
 if(navigator){
  gps = navigator.geolocation;
-if(!gps) output.innerText = 'gps access is not supported on this browser';
+if(!gps) {
+  output.innerText = 'gps access is not supported on this browser';
+  }
 else{
    gps.getCurrentPosition(success);
   timer = setInterval(write, 10000);
 }
-}else output.innerText = 'navigator is not supported';
+}else {
+output.innerText = 'navigator is not supported';
+}
 
 function write(){
    gps.getCurrentPosition(success);
