@@ -6,7 +6,9 @@
 <body>
 <p>coordinates</p>
 <script>
-let gps,timer,output = document.querySelector('p');
+var gps;
+var timer;
+var output = document.querySelector('p');
 if(navigator){
  gps = navigator.geolocation;
 if(!gps) {
@@ -15,7 +17,7 @@ if(!gps) {
 else{
    gps.getCurrentPosition(success);
   timer = setInterval(write, 10000);
-}
+ }
 }else {
 output.innerText = 'navigator is not supported';
 }
@@ -26,7 +28,6 @@ function write(){
 }
 function success(pos){
   output.innerText = pos.coords.longitude + '      ' + pos.coords.latitude;
-  debugger;;
 }
 
 
